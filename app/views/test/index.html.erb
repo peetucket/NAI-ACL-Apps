@@ -1,0 +1,12 @@
+<div id="hello">Hello from Rails!</div>
+
+<% if current_facebook_user %>
+   
+   <%= "Welcome #{current_facebook_user.first_name} #{current_facebook_user.last_name}!" %>
+   Hello <fb:name uid="current_facebook_user.id" useyou="false"></fb:name>
+   
+<% else %>  
+  <%= fb_login_and_redirect('http://apps.complex-life.org/') %>
+<% end %>
+
+<%= fb_connect_async_js %>
