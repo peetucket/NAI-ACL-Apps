@@ -1,0 +1,125 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+unmanned_lander:
+  id: 1
+  type: MissionToMars::MissionType
+  name: Unmanned lander
+  description: This mission does not have the capability to move on the surface and will remain in one spot after landing.  By selecting this option, you have the most weight and budget available for detectors and other instruments.  You should select from four out of the five available options below for both the detectors and instruments.
+  allowed_cost: 4
+  duration: 180
+  success_rate: .95
+  sort_order: 1
+      
+unmanned_lander_with_rover:
+  id: 2
+  type: MissionToMars::MissionType
+  name: Unmanned lander with rover
+  description: This mission includes a rover that is able to move on the surface of Mars.  The rover will travel on wheels and can move up to 10 miles in any direction over the life of its mission.  By selecting this option, you have less weight and budget available for detectors and other instruments.  You should select from three out of the five available options below for both the detectors and instruments.
+  allowed_cost: 3
+  duration: 90
+  success_rate: .90
+  sort_order: 2
+  
+unmanned_lander_with_rover_and_return_ship:
+  id: 3
+  type: MissionToMars::MissionType
+  name: Unmanned lander with rover and return ship
+  description: This mission does not have the ability to move on the surface and will remain in one spot after landing.  It does have the ability to collect up to 20 kilograms of rock, soil and atmospheric samples from it’s landing site, and includes rockets for launching and returning any collected samples back to Earth.  Due to the weight and cost of the return ship and fuel, you can only select from two out of the five available options below for both the detectors and instruments.
+  allowed_cost: 2
+  duration: 30
+  success_rate: .80
+  sort_order: 3
+  
+manned_mission:
+  id: 4
+  type: MissionToMars::MissionType
+  name: Manned mission
+  description: The manned mission to Mars includes a crew of six, a surface lander and the ability to return up to 10 kilograms of material from the surface.  Five out of the six crew members will be able to walk on the surface.  Due to the weight and cost of the required life support systems, food, return ship and fuel, you can only select one out of the five available options below for both the detectors and instruments.
+  allowed_cost: 1
+  duration: 10
+  success_rate: .70      
+  sort_order: 4
+
+mass_spec:
+  id: 5
+  type: MissionToMars::Detector
+  name: Mass spectrometer
+  description: A mass spectrometer measures the relative abundance of the constituent elements in gas molecules, either from the atmosphere or from the gas released from solid samples by heating them.  
+  cost: 1
+  sort_order: 1
+  
+laser:
+  id: 6
+  type: MissionToMars::Detector
+  name: Lased induced spectrometer
+  description: A laser spectrometer measures the light spectrum emitted after vaporizing solids or liquids with a laser, and is used to determine which constituent components are contained in the sample.
+  cost: 1
+  sort_order: 2
+
+chem_lab:
+  id: 7
+  type: MissionToMars::Detector
+  name: Chemical processing lab
+  description: The chemical processing lab analyzes gas molecules to detect for signs of organic material or water vapor.
+  cost: 1
+  sort_order: 3
+
+radiation:
+  id: 8
+  type: MissionToMars::Detector
+  name: Radiation Detector
+  description: A radiation detector measures any form of radiation (x-rays, gamma rays, etc.) from any source (atmosphere and rocks).
+  cost: 1
+  sort_order: 4
+  
+environ_sensors:
+  id: 9
+  type: MissionToMars::Detector
+  name: Environmental Sensors
+  description: Environmental sensors measure the wind speed, air temperature, atmospheric pressure, PH of soil, and the ground temperature.
+  cost: 1
+  sort_order: 5
+        
+microscope:
+  id: 10
+  type: MissionToMars::Equipment
+  name: Microscope and Camera
+  description: This instrument takes close up high resolution images of rocks and sand to look for small structures (between 1 micron and 1 cm in size).
+  cost: 1
+  sort_order: 1
+
+drill:
+  id: 11
+  type: MissionToMars::Equipment
+  name: Drill
+  description: The drill extracts samples from a specific spot on the surface of the rock, and up to 5 cm inside a rock for analysis in the mass spectrometer (if available) or for imaging with the microscope (if available).
+  cost: 1
+  sort_order: 2  
+
+hammer:
+  id: 12
+  type: MissionToMars::Equipment
+  name: Robotic hammer
+  description: The robotic hammer breaks a rock into smaller pieces for imaging with the microscope (if available).
+  cost: 1
+  sort_order: 3
+
+crusher:
+  id: 13
+  type: MissionToMars::Equipment
+  name: Robotic Rock Crusher
+  description: The rock crusher is able break down rocks into fine dust for analysis in the laser induced spectrometer (if available) or imaging with the microscope (if available).
+  cost: 1
+  sort_order: 4
+        
+laser:
+  id: 14
+  type: MissionToMars::Equipment
+  name: Laser
+  description: A laser heats samples to vaporize them into a gas for analysis in the chemical processing lab (if available).
+  cost: 1
+  sort_order: 5

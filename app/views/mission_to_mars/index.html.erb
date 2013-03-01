@@ -1,0 +1,47 @@
+<div id="main">
+  
+  <h2><%=@activity.name%></h2>
+
+  <p><%=@activity.description%></p>
+
+  <h3>Select a mission type:</h3>
+
+  <% @mission_types.each do |mission_type| %>
+    <input type="radio" name="item_selector" <%if @your_mission.mission_type == mission_type%>checked="checked"<%end%> id="MissionType" value="<%=mission_type.id%>"> <%=mission_type.name %> - <%=mission_type.description%>  Likelihood of mission success = <%=mission_type.success_rate * 100%>%.  Mission Duration = <%=mission_type.duration%> days.  Weight units allowed: <%=mission_type.allowed_cost%><br /><br />
+  <% end %>  
+
+  <h3>Select your detectors:</h3>
+
+  <% @detectors.each do |detector| %>
+    <input type="checkbox" name="item_selector" <%if @your_detectors.include?(detector) %>checked="checked"<% end%> id="Detector" value="<%=detector.id%>"> <%=detector.name %> - <%=detector.description%>  Weight unit = <%=detector.cost%><br />
+  <% end %>
+
+  <h3>Select your equipment:</h3>
+
+  <% @equipment.each do |equipment| %>
+    <input type="checkbox" name="item_selector" <%if @your_equipment.include?(equipment) %>checked="checked"<% end%> id="Equipment" value="<%=equipment.id%>"> <%=equipment.name %> - <%=equipment.description%>  Weight unit = <%=equipment.cost%><br />
+  <% end %> 
+ 
+</div>
+
+<div id="sidebar">
+  <%= render :partial=>'your_mission' %>
+</div>
+
+<script language="JavaScript">
+
+  $('input[name=item_selector]').click(function() {
+    var id=this.value;
+    var class_name=this.id;
+    var checked=this.checked;
+    $.ajax({
+       type: "POST",
+       url: "/mission_to_mars/save_user_choice",
+       data: "usage_id=<%=@your_mission.id%>&choice_class_name=" + class_name + "&checked=" + checked + "&choice_id="+id,
+       success: function(data) {
+         $('#sidebar').html(data);
+       }
+     });
+  });
+  
+</script>

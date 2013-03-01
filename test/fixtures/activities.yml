@@ -4,10 +4,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
+mission_to_mars:
   id: 1
   name: Mission To Mars
+  description: You are on a panel responsible for an upcoming NASA mission to look for signs of life, either current or past, on Mars.   You have a limited budget, based on costs and weight considerations, and can only select from a limited number of options.  Design your mission below using the constraints provided to maximize your chances of successfully finding evidence of life.  Each mission includes the length of time you can spend on the surface and the probability of a successful mission (in other words, all engineering aspects of the mission, including landing, surface operations, and any return to Earth,work as designed).  You should provide explanations and rationale for your choices based on your knowledge of how life might be detected.
 #
-two:
+find_a_fossil:
   id: 2
   name: Find a Fossil
+  description: Help find the fossils!

@@ -5,11 +5,9 @@
 # below each fixture, per the syntax in the comments below
 #
 one: 
-  id: 1
-  name: big rocket
-  step_id: 1
-#
-two: 
-  id: 2
-  name: small rocket
-  step_id: 1
+  equipment_id: 11 #drill
+  dependent_on: 5 #mass spec
+
+two:
+  equipment_id: 11 #drill
+  dependent_on: 10 #microscope

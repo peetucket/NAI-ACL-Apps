@@ -1,0 +1,20 @@
+  <h3><%=@user.first_name%>'s Mission</h3>
+  Created <%=time_ago_in_words(@your_mission.created_at)%> ago<br /><br />
+  <strong><%=@your_mission.mission_name%></strong> <br />
+  <br />
+
+  <strong>Detectors</strong><br />
+
+  <ul>
+  <% @your_mission.detectors.each do |detector|  %>
+    <li><%=detector.name %></li>
+  <% end %>
+  </ul>
+
+  <strong>Equipment</strong><br />
+
+  <ul>
+  <% @your_mission.equipment.each do |equipment|  %>
+    <li><%=equipment.name %></li>
+  <% end %>
+  </ul>

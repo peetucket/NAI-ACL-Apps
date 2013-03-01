@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  time:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%b %d"
+      full_date: "%B %d, %Y"
+      long: "%B %d, %Y at %H:%M"  
